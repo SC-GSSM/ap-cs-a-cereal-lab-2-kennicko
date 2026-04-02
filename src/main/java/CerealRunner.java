@@ -52,7 +52,7 @@ public class CerealRunner
    public static Cereal highestPercentFiber()
    {
       Cereal maxC = null;
-      for(Cereal c : cereals) if(!Boolean(maxC) || maxC.getFiber() < c.getFiber()) maxC = c;
+      for(Cereal c : cereals) if(maxC == null || maxC.getFiber() < c.getFiber()) maxC = c;
       
       return maxC;
    }
