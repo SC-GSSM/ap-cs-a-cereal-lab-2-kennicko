@@ -27,10 +27,12 @@ public class CerealRunner
       ArrayList<Cereal> cs = new ArrayList<Cereal>();
       for(Cereal c : cereals){
          double carbs = c.getCarbs();
-         if(carbs <= min || carbs >= max) break;
+         if(carbs >= min && carbs <= max){
+
 
          Boolean dome = false;
          for (int i = 0; i < cs.size(); i++) {
+            
             if(carbs < cs.get(i).getCarbs()){
                 cs.add(i,c);
                 dome=true;
@@ -38,6 +40,7 @@ public class CerealRunner
             }
          }
          if(!dome)cs.add(c);
+      }
       }
 
       return cs;
